@@ -21,3 +21,11 @@ El script [`crear-usuarios.ps1`](scripts/crear-usuarios.ps1) automatiza la creac
 
 ![Verificación GPO](img/05-cliente-bloqueo.png)
 
+## Estructura del Repositorio
+
+```text
+windows-server-ad-homelab/
+├── README.md
+├── img/
+└── scripts/
+    └── crear-usuarios.ps1

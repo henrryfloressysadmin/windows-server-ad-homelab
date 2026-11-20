@@ -3,6 +3,8 @@
 Implementación de una infraestructura de dominio empresarial utilizando Windows Server 2022 y un cliente Windows 10.
 
 ## Arquitectura y Servicios
+
+* **Dominio Active Directory:** `ad.lab.test`
 * **Controlador de Dominio:** Windows Server 2022 (AD DS + DNS).
 * **Cliente:** Windows 10 Pro unido al dominio.
 * **Automatización:** Aprovisionamiento masivo de usuarios mediante PowerShell.

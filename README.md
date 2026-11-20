@@ -23,14 +23,14 @@ El script [`crear-usuarios.ps1`](scripts/crear-usuarios.ps1) automatiza la creac
 
 ## Estructura del Repositorio
 
-```text
-windows-server-ad-homelab/
-├── README.md
-├── img/
-└── scripts/
-    └── crear-usuarios.ps1
+* `README.md`: Documentación principal del laboratorio.
+* `img/`: Capturas de pantalla de la configuración y pruebas.
+* `scripts/crear-usuarios.ps1`: Script en PowerShell para la creación masiva de usuarios.
 
-Get-ADUser -Filter * -SearchBase "OU=Empleados_Empresa,DC=ad,DC=lab,DC=test" | Select-Object Name, SamAccountName, Enabled
+## Comandos de Verificación
 
-gpupdate /force
-gpresult /r
+* **Listar los usuarios creados en Active Directory (PowerShell en el servidor):**
+  `Get-ADUser -Filter * -SearchBase "OU=Empleados_Empresa,DC=ad,DC=lab,DC=test" | Select-Object Name, SamAccountName, Enabled`
+
+* **Forzar y auditar las GPO aplicadas (CMD en el cliente Windows 10):**
+  `gpupdate /force` y `gpresult /r`

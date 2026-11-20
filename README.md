@@ -34,3 +34,8 @@ El script [`crear-usuarios.ps1`](scripts/crear-usuarios.ps1) automatiza la creac
 
 * **Forzar y auditar las GPO aplicadas (CMD en el cliente Windows 10):**
   `gpupdate /force` y `gpresult /r`
+
+  ## Recursos Compartidos y Modelo AGDLP
+
+* **Cadena AGDLP aplicada:** Cuentas de usuario en `Empleados_Empresa` $\rightarrow$ grupo global `GG_Empleados` $\rightarrow$ grupo local de dominio `DL_Compartida_Empleados_RW` $\rightarrow$ permisos NTFS (`Modificar`) sobre el recurso compartido `Empleados$`.
+* **Mapeo automático por GPO:** Política `GPO-Mapear-Unidad-Empleados` configurada en *Drive Maps* para montar la unidad `Z:` al iniciar sesión en el cliente Windows 10 (previo cierre y reapertura de sesión para refrescar el token de grupo).

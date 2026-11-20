@@ -29,3 +29,8 @@ windows-server-ad-homelab/
 ├── img/
 └── scripts/
     └── crear-usuarios.ps1
+
+Get-ADUser -Filter * -SearchBase "OU=Empleados_Empresa,DC=ad,DC=lab,DC=test" | Select-Object Name, SamAccountName, Enabled
+
+gpupdate /force
+gpresult /r

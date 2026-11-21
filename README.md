@@ -82,7 +82,7 @@ runas /user:ad.lab.test\soporte.n1 "mmc C:\Windows\System32\dsa.msc"
   * Gestión de cuentas fuera de `Empleados_Empresa` (ej. contenedor `Users`): **Acceso denegado**.
 
 ![Acceso denegado al intentar eliminar usuario con soporte.n1](img/09-delegacion-acceso-denegado.png)
-![Papelera de Reciclaje de AD](img/10.png)
+
 ---
 
 ## 5. Recuperación ante Desastres: Papelera de Reciclaje de AD
@@ -101,8 +101,6 @@ Get-ADObject -Filter 'isDeleted -eq $true -and Name -ne "Deleted Objects"' -Incl
 # Restaurar un usuario eliminado con todos sus atributos y grupos intactos
 Get-ADObject -Filter 'Name -like "Usuario Prueba*"' -IncludeDeletedObjects | Restore-ADObject.
 
-![Papelera de Reciclaje de AD](img/10.png)
-
-
-
 ```
+
+![Papelera de Reciclaje de AD](img/10.png)

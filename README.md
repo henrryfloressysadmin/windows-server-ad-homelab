@@ -15,6 +15,15 @@ Este documento recopila la implementación y validación práctica de gobernanza
 
 ---
 
+```mermaid
+flowchart LR
+  subgraph R["Red interna VirtualBox"]
+    DC["Windows Server 2022<br/>AD DS · DNS · Archivos"]
+    C["Windows 10 Pro<br/>RSAT · unido a ad.lab.test"]
+  end
+  C -->|"Kerberos / DNS / SMB"| DC
+```
+
 ## 2. Control de Acceso a Recursos Compartidos (Modelo AGDLP)
 
 Para escalar la administración de permisos en carpetas compartidas sin asignar derechos individuales a usuarios, se aplicó la metodología estándar **AGDLP** (*Accounts $\rightarrow$ Global Groups $\rightarrow$ Domain Local Groups $\rightarrow$ Permissions*):

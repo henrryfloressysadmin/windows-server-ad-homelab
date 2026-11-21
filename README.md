@@ -2,7 +2,7 @@
 
 Este documento recopila la implementación y validación práctica de gobernanza de accesos (AGDLP), automatización mediante Políticas de Grupo (GPO), delegación de privilegios bajo el principio de mínimo privilegio (RBAC) y recuperación ante desastres mediante la Papelera de Reciclaje de Active Directory en el dominio **`ad.lab.test`**.
 
---
+---
 
 ## 1. Arquitectura del Laboratorio
 
@@ -79,7 +79,6 @@ runas /user:ad.lab.test\soporte.n1 "mmc C:\Windows\System32\dsa.msc"
   * Restablecimiento de contraseña de usuarios dentro de `Empleados_Empresa`: **Permitido**.
   * Eliminación de usuarios dentro de `Empleados_Empresa`: **Acceso denegado**.
   * Gestión de cuentas fuera de `Empleados_Empresa` (ej. contenedor `Users`): **Acceso denegado**.
-  * Gestión de cuentas fuera de `Empleados_Empresa` (ej. contenedor `Users`): **Acceso denegado**.
 
 ![Acceso denegado al intentar eliminar usuario con soporte.n1](img/09-delegacion-acceso-denegado.png)
 
@@ -99,7 +98,7 @@ Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope ForestOrConfigur
 Get-ADObject -Filter 'isDeleted -eq $true -and Name -ne "Deleted Objects"' -IncludeDeletedObjects | Select-Object Name, LastKnownParent
 
 # Restaurar un usuario eliminado con todos sus atributos y grupos intactos
-Get-ADObject -Filter 'Name -like "Usuario Prueba*"' -IncludeDeletedObjects | Restore-ADObject.
+Get-ADObject -Filter 'Name -like "Usuario Prueba*"' -IncludeDeletedObjects | Restore-ADObject
 
 ```
 

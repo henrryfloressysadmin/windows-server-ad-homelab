@@ -101,7 +101,8 @@ Get-ADObject -Filter 'isDeleted -eq $true -and Name -ne "Deleted Objects"' -Incl
 # Restaurar un usuario eliminado con todos sus atributos y grupos intactos
 Get-ADObject -Filter 'Name -like "Usuario Prueba*"' -IncludeDeletedObjects | Restore-ADObject
 
-
 ![Recuperación de objeto desde la Papelera de Reciclaje de AD](img/10.png)
+
+
 
 ```

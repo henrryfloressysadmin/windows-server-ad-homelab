@@ -2,7 +2,7 @@
 
 Este documento recopila la implementación y validación práctica de gobernanza de accesos (AGDLP), automatización mediante Políticas de Grupo (GPO), delegación de privilegios bajo el principio de mínimo privilegio (RBAC) y recuperación ante desastres mediante la Papelera de Reciclaje de Active Directory en el dominio **`ad.lab.test`**.
 
----
+--
 
 ## 1. Arquitectura del Laboratorio
 
